@@ -7,26 +7,26 @@ const Project = () => {
         {
             id: 1,
             image: Project1,
-            title: 'Project 1',
-            description: 'Description of Project 1',
-            technologies: ['React', 'Node.js', 'MongoDB'],
-            githubLink: 'https://github.com/example/project1'
+            title: 'E-Commerce Website',
+            description: 'A fully responsive, multi-page e-commerce website built from scratch using clean HTML5, modern CSS3, and vanilla JavaScript. This project features mobile-first layouts, modern CSS styling patterns, and dynamic UI interactions',
+            technologies: ['HTML', 'CSS', 'JavaScript'],
+            githubLink: 'https://github.com/Tharshika2001/E-Commerce-website'
         },
          {
             id: 2,
             image: Project2,
-            title: 'Project 2',
-            description: 'Description of Project 2',
-            technologies: ['React', 'Node.js', 'MongoDB'],
-            githubLink: 'https://github.com/example/project2'
+            title: 'Zentryx Mini-ERP',
+            description: 'Zentryx Mini-ERP is a full-stack task and productivity management platform engineered with an end-to-end TypeScript architecture. It enables users to securely manage daily workflows, track task lifecycles through custom status pipelines, and monitor productivity metrics in real time via an interactive analytics dashboard.',
+            technologies: ['React', 'Node.js', 'TypeScript', 'PostgreSQL'],
+            githubLink: 'https://github.com/Tharshika2001/zentryx-mini-erp'
         },
          {
             id: 3,
             image: Project3,
-            title: 'Project 3',
-            description: 'Description of Project 3',
-            technologies: ['React', 'Node.js', 'MongoDB'],
-            githubLink: 'https://github.com/example/project3'
+            title: 'MediCare HMS',
+            description: 'MediCore HMS is a full-stack hospital management platform built with React, Node.js, and SQL Server to replace manual paperwork. It streamlines clinical operations by managing centralized digital patient records, conflict-free doctor scheduling, automated billing, and real-time inventory tracking for pharmacy stocks, blood bank supplies, and emergency ambulance logs.',
+            technologies: ['React', 'Node.js', 'SQL Server'],
+            githubLink: 'https://github.com/Tharshika2001/MediCare-HMS'
         },
 
     ]

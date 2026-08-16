@@ -5,10 +5,12 @@ import Header from './components/Header';
 import HeroinSection from './components/HeroinSection';
 import Education from './components/Education';
 import Projects from './components/Projects';
+import Certificate from './components/Certificate';
 import About from './components/About';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+
 
 const App = () => {
   useEffect(() => {
@@ -25,10 +27,12 @@ const App = () => {
       <HeroinSection />
       <Education />
       <Projects />
+      <Certificate />
       <About/>
       <Skills/>
       <Contact/>
       <Footer/>
+
     </div>
   );
 };

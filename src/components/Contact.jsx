@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, GitBranch, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
     const contactInfo = [
@@ -6,20 +6,30 @@ const Contact = () => {
             id: 1,
             icon: Mail,
             title: 'Email',
-            value: 'tharshikafernandoz@gmail.com'
+            value: 'pakirathantharshika@gmail.com',
+            link: 'mailto:pakirathantharshika@gmail.com',
         },
         {
             id: 2,
-            icon: Phone,
-            title: 'Phone',
-            value: '+94 71 234 5678'
+            icon: GitBranch,
+            title: 'GitHub',
+            value: 'github.com/Tharshika2001',
+            link: 'https://github.com/Tharshika2001',
         },
         {
             id: 3,
+            icon: Phone,
+            title: 'Phone',
+            value: '+94 75 66 56 379',
+            link: 'tel:+94756656379',
+        },
+        {
+            id: 4,
             icon: MapPin,
             title: 'Location',
-            value: 'Colombo, Sri Lanka'
-        }
+            value: 'Colombo, Sri Lanka',
+            link: 'https://maps.app.goo.gl/Nq9gYEwifnK7xA966',
+        },
     ];
 
     return (
@@ -36,12 +46,12 @@ const Contact = () => {
                 </div>
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-                    <div className='space-y-8'>
+                    <div className='space-y-6'>
                         {contactInfo.map((info) => {
                             const Icon = info.icon;
-                            return (
-                                <div key={info.id} className='flex items-center gap-4 p-4 bg-[#111a3e] rounded-xl hover:bg-[#1a244a] transition-colors duration-300'>
-                                    <div className='p-3 bg-primary/20 rounded-lg'>
+                            const CardContent = (
+                                <>
+                                    <div className='p-3 bg-primary/20 rounded-lg group-hover:bg-primary/30 transition-colors'>
                                         <Icon size={24} className='text-primary' />
                                     </div>
                                     <div>
@@ -50,6 +60,25 @@ const Contact = () => {
                                         </h3>
                                         <p className='text-gray-300 mt-1'>{info.value}</p>
                                     </div>
+                                </>
+                            );
+
+                            return info.link ? (
+                                <a
+                                    key={info.id}
+                                    href={info.link}
+                                    target={info.link.startsWith('http') ? '_blank' : undefined}
+                                    rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                    className='group flex items-center gap-4 p-4 bg-[#111a3e] rounded-xl hover:bg-[#1a244a] transition-colors duration-300 block'
+                                >
+                                    {CardContent}
+                                </a>
+                            ) : (
+                                <div
+                                    key={info.id}
+                                    className='flex items-center gap-4 p-4 bg-[#111a3e] rounded-xl'
+                                >
+                                    {CardContent}
                                 </div>
                             );
                         })}
@@ -76,7 +105,8 @@ const Contact = () => {
                             />
                             <button
                                 type='submit'
-                                className='w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300'>
+                                className='w-full bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300'
+                            >
                                 Send Message
                                 <Send size={18} />
                             </button>
