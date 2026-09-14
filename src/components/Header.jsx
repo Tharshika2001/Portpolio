@@ -1,95 +1,142 @@
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
 
-const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const Header = ({ onHover }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const menuItems = [
-        { name: 'Education', href: '#education' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'About Me', href: '#about' },
-        { name: 'Skills', href: '#skills' }
-    ];
+  const menuItems = [
+    { name: 'ABOUT', href: '#about' },
+    { name: 'EDUCATION', href: '#education' },
+    { name: 'PROJECTS', href: '#projects' },
+    { name: 'CERTIFICATES', href: '#certificates' },
+    { name: 'SKILLS', href: '#skills' },
+    { name: 'CONTACT', href: '#contact' },
+  ];
 
-    const scrollToSection = (href) => {
-        setIsMenuOpen(false);
-        document.querySelector(href)?.scrollIntoView({
-            behavior: 'smooth'
-        });
-    };
+  const handleMouseEnter = () => onHover?.(true);
+  const handleMouseLeave = () => onHover?.(false);
+
+  const scrollToSection = (href) => {
+    setIsMenuOpen(false);
+    handleMouseLeave();
+    document.querySelector(href)?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <header className='relative z-50 px-6 py-7'>
-        <div className='max-w-7xl mx-auto flex justify-between items-center'>
-            {/* Logo */}
-            <div className='text-white text-3xl font-black cursor-pointer'>
-                PORTFOLIO<span className='text-primary'>.</span>
-            </div>
-            {/* Navigation */}
-<nav className='hidden md:flex items-center gap-10'>
-                <ul className='flex gap-8'>
-                    {menuItems.map((item) => (
-                        <li key={item.name}>
-                            <button
-                            onClick={() => scrollToSection(item.href)}
-                            className='text-gray-300
-                            hover:text-white text-base font-medium
-                            transition-colors'>
-                             {item.name}
-                           </button>
-                        </li>
-                  ))}
-                </ul>
-<button
-                onClick={() => scrollToSection('#contact')}
-                className='bg-primary hover:bg-primary/90
-                text-white px-6 py-2.5 rounded-lg text-base
-                font-semibold transition-all'>
-                   Contact Me
-                </button>
-            </nav>
-            {/* Mobile Menu */}
-<button
-                className='md:hidden text-white'
-                onClick={() => setIsMenuOpen (!isMenuOpen)}>
-                    {isMenuOpen ? <X size={32}/> : <Menu size={32}/>}
-            </button>
-        </div>
-        {isMenuOpen && (
-               <div className='fixed inset-0 bg-black/60
-                backdrop-blur-sm md:hidden'
-                onClick={() => setIsMenuOpen (false)}>
-                </div>
-            )}
-            <div className={`fixed top-0 right-0 h-full w-80 bg-[#111827] z-50 transition-transform duration-300 md:hidden ${
-                  isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                } p-8 flex flex-col`}>
-                    <button className='self-end text-white mb-10'
-                    onClick={() =>setIsMenuOpen(false)}>
-                       <X size={32}/>
-                    </button>
-                    <ul className='flex flex-col gap-8'>
-                        {menuItems.map((item) => (
-                            <li key={item.name}>
-<button
-                                onClick={() => scrollToSection(item.href)}
-                                className='text-white text-xl
-                            font-semibold hover:text-primary
-                            transition-colors'>
-                                {item.name}
-                                </button>
-                            </li>
-                        ))}
-                         <li className='pt-6'>
-<button onClick={() => scrollToSection ('#contact')}
-                            className='w-full bg-primary text-white
-                            py-4 rounded-xl text-lg font-bold hover:text-white'>
-                                   Contact Me
-                            </button>
+    <header className="relative z-50 w-full px-6 sm:px-12 lg:px-16 py-6 bg-black/40 backdrop-blur-sm border-b border-[#8C6D4F]/20">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Brand Logo */}
+        <a
+          href="#"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-80 transition-opacity"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          THARSHIKA.
+        </a>
 
-                         </li>
-                    </ul>     
-            </div>            
+        {/* Desktop Navigation Links */}
+        <nav
+          className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[11px] tracking-[0.28em] font-light uppercase text-[#C4B5A5] absolute left-1/2 -translate-x-1/2"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          {menuItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => scrollToSection(item.href)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="relative group py-1 transition-colors duration-300 hover:text-[#FFF5EB]"
+            >
+              {item.name}
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#D4AF37]/60 transition-all duration-300 group-hover:w-full" />
+            </button>
+          ))}
+        </nav>
+
+        {/* Right CTA Button */}
+        <div className="hidden md:flex items-center">
+          <button
+            onClick={() => scrollToSection('#contact')}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            <span>LET&apos;S TALK</span>
+            <span className="transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-xs">
+              ↗
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <button
+          className="md:hidden text-[#EAD8C7] hover:text-[#D4AF37] transition-colors p-1"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
+      </div>
+
+      {/* Mobile Drawer Backdrop */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/75 backdrop-blur-md md:hidden z-40"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Off-Canvas Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 bg-[#0c0a08] border-l border-[#8C6D4F]/30 z-50 transition-transform duration-300 ease-in-out md:hidden p-8 flex flex-col justify-between ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div>
+          <div className="flex justify-between items-center mb-10">
+            <span
+              className="text-xs font-semibold tracking-[0.35em] uppercase text-[#EAD8C7]"
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
+            >
+              MENU
+            </span>
+            <button
+              className="text-[#C4B5A5] hover:text-[#EAD8C7]"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X size={24} />
+            </button>
+          </div>
+
+          <ul className="flex flex-col space-y-6">
+            {menuItems.map((item) => (
+              <li key={item.name}>
+                <button
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-xs font-medium tracking-[0.28em] uppercase text-[#C4B5A5] hover:text-[#FFF5EB] transition-colors text-left"
+                  style={{ fontFamily: "'Montserrat', sans-serif" }}
+                >
+                  {item.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          onClick={() => scrollToSection('#contact')}
+          className="w-full flex items-center justify-center space-x-2 text-[11px] tracking-[0.24em] font-medium uppercase py-3 border border-[#8C6D4F] bg-[#1a1510] text-[#EAD8C7] hover:border-[#D4AF37] transition-all duration-300"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          <span>LET&apos;S TALK</span>
+          <span className="text-xs">↗</span>
+        </button>
+      </div>
     </header>
   );
 };

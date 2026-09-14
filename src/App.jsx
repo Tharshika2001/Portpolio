@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from './components/Header';
-import HeroinSection from './components/HeroinSection';
+import HeroSection from './components/HeroSection';
+import About from './components/About';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import Certificate from './components/Certificate';
-import About from './components/About';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
@@ -24,11 +24,11 @@ const App = () => {
   return (
     <div className='bg-[#111827] min-h-screen'>
       <Header /> {/* <-- Rendered as a JSX component */}
-      <HeroinSection />
+      <HeroSection />
+      <About/>
       <Education />
       <Projects />
       <Certificate />
-      <About/>
       <Skills/>
       <Contact/>
       <Footer/>

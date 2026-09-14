@@ -1,20 +1,31 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className='bg-[#111827] text-gray-400 py-6 text-center'>
+    <footer className="relative w-full bg-black text-[#E8DFD8] border-t border-[#8C6D4F]/25 py-8 overflow-hidden">
+      {/* Top Gold Horizon Accent */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/60 to-transparent" />
 
-     <div className='container p-4 md:p-12 justify-between 
-      flex flex-col md:flex-row items-center gap-4 md:gap-0'>
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* Brand Logo */}
+        <a
+          href="#"
+          className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:text-white transition-colors"
+          style={{ fontFamily: "'Montserrat', sans-serif" }}
+        >
+          THARSHIKA<span className="text-[#D4AF37]">.</span>
+        </a>
 
-        <div className='text-white text-2xl font-black cursor-pointer'>
-            PORTFOLIO<span className='text-primary'>.</span>
-        </div>
-        <p className='text-slate-600 text-sm md:text-base'>
-            All rights reserved.
+        {/* Center Tagline */}
+        <p className="text-[10px] sm:text-[11px] font-mono tracking-[0.2em] uppercase text-[#8C6D4F]">
+          ENGINEERED WITH PRECISION
+        </p>
+
+        {/* Copyright */}
+        <p className="text-[10.5px] font-mono text-[#A8988B]/80">
+          &copy; {new Date().getFullYear()} ALL RIGHTS RESERVED.
         </p>
       </div>
-
     </footer>
   );
 };
