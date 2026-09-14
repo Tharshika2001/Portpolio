@@ -12,7 +12,7 @@ const CertificateData = [
     category: 'CLOUD INFRASTRUCTURE',
     description:
       'Validates foundational knowledge of cloud services and how those services are delivered with Microsoft Azure, covering security, privacy, compliance, and cloud computing principles.',
-    pdfUrl: '/AZ-900 Microsoft Azure Fundamentals.pdf',
+    pdfUrl: '/az-900-azure-fundamentals.pdf',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const CertificateData = [
     category: 'SOFTWARE ENGINEERING',
     description:
       'Rigorous software engineering foundation covering core programming logic, algorithms, data structures, debugging workflows, and industry-standard collaborative practices.',
-    pdfUrl: '/Career Essentials in Software.pdf',
+    pdfUrl: '/career-essentials-software.pdf',
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const CertificateData = [
     category: 'PROFESSIONAL COMMUNICATION',
     description:
       'Comprehensive coursework enhancing professional communication, technical documentation, and verbal skills tailored for high-standard engineering teams.',
-    pdfUrl: '/English Certificate.pdf',
+    pdfUrl: '/english-certificate.pdf',
   },
 ];
 
