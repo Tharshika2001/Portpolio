@@ -118,7 +118,7 @@ export const HeroSection = () => {
 
               {/* Download Resume Button */}
               <motion.a
-                href="/Tharshika_Resume.pdf"
+                href="/TharshikaCV.pdf"
                 download="Tharshika_Resume.pdf"
                 whileHover={{ scale: 1.02 }}
                 className="relative inline-flex items-center space-x-2.5 px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
