@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, CheckCircle } from 'lucide-react';
-import educ from '../assets/profile.jpeg';
+import educ from '../assets/profile5.png';
 
 const educationData = [
   {

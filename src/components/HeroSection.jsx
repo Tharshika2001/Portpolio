@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
-import Myprofile from '../assets/profile.jpeg';
+import Myprofile from '../assets/profile4.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -93,7 +93,7 @@ export const HeroSection = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                Specializing in production-grade web applications across frontend, backend,
+                I'm Pakirathan Tharshika a Full Stack Developer and Software Engineer Student Specializing in production-grade web applications across frontend, backend,
                 and relational database systems. Engineering clean architectures with React, 
                 TypeScript, Node.js, and SQL.
               </p>
@@ -145,7 +145,7 @@ export const HeroSection = () => {
                 <img
                   src={Myprofile}
                   alt="Tharshika"
-                  className="w-full h-full object-cover rounded-full grayscale-[25%] contrast-[1.05] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover object-[center_10%] rounded-full grayscale-[25%] contrast-[1.05] hover:grayscale-0 transition-all duration-500"
                 />
               </div>
 
