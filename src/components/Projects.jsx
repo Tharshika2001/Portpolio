@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import Project1 from '../assets/project1.jpg';
+import Project1 from '../assets/Project1.jpg';
 import Project2 from '../assets/project2.jpg';
 import Project3 from '../assets/project3.png';
 
